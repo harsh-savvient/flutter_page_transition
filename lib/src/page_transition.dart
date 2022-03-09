@@ -56,7 +56,7 @@ class PageTransition<T> extends PageRouteBuilder<T> {
     this.reverseDuration = const Duration(milliseconds: 300),
     this.fullscreenDialog = false,
     this.opaque = false,
-    this.maintainState = true,
+    this.maintainState = false,
     RouteSettings? settings,
   })  : assert(inheritTheme ? ctx != null : true,
             "'ctx' cannot be null when 'inheritTheme' is true, set ctx: context"),
