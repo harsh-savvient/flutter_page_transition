@@ -39,6 +39,8 @@ class PageTransition<T> extends PageRouteBuilder<T> {
   final bool fullscreenDialog;
 
   final bool opaque;
+  
+  final bool maintainState;
 
   /// Page transition constructor. We can pass the next page as a child,
   PageTransition({
@@ -54,6 +56,7 @@ class PageTransition<T> extends PageRouteBuilder<T> {
     this.reverseDuration = const Duration(milliseconds: 300),
     this.fullscreenDialog = false,
     this.opaque = false,
+    this.maintainState = true,
     RouteSettings? settings,
   })  : assert(inheritTheme ? ctx != null : true,
             "'ctx' cannot be null when 'inheritTheme' is true, set ctx: context"),
@@ -70,7 +73,7 @@ class PageTransition<T> extends PageRouteBuilder<T> {
           transitionDuration: duration,
           reverseTransitionDuration: reverseDuration,
           settings: settings,
-          maintainState: true,
+          maintainState: maintainState,
           opaque: opaque,
           fullscreenDialog: fullscreenDialog, 
           transitionsBuilder: (BuildContext context,
